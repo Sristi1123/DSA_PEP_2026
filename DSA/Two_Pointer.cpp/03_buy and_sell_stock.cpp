@@ -1,5 +1,8 @@
 // // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 
+
+// time exceeding problem
+
 // class Solution {
 // public:
 //     int maxProfit(vector<int>& prices) {
@@ -22,6 +25,8 @@
 //     }
 // // };
 
+
+// best solution
 
 // class Solution {
 // public:
