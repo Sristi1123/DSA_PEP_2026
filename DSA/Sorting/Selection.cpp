@@ -1,5 +1,7 @@
 //  example: book in library (sort them based on their height)
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 void selectionsort(vector<int> &arr,int n){
     for(int i=0;i<n-1;i++){
@@ -12,9 +14,15 @@ void selectionsort(vector<int> &arr,int n){
     }
 }
 int main(){
-    int arr[5]={3,0,2,7,1};
-    int n=5;
-    selectionsort(arr,n);
-    
+    vector<int> arr = {3, 0, 2, 7, 1};
+    int n = arr.size();
+
+    selectionsort(arr, n);
+
+    // printing sorted array
+    for(int x : arr){
+        cout << x << " ";
+    }
+
     return 0;
 }

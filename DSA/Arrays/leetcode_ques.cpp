@@ -5,6 +5,8 @@
 // 268. Missing Number
 // 485. Max Consecutive Ones
 // 704. Binary Search
+// 35. Search Insert Position
+// 66. Plus One
 
 
 
