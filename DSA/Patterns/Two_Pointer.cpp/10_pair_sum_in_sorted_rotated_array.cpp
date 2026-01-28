@@ -1,4 +1,5 @@
-// // User function Template for C++
+// https://www.geeksforgeeks.org/problems/pair-sum-in-a-sorted-and-rotated-array/1
+
 
 // class Solution {
 //   public:
