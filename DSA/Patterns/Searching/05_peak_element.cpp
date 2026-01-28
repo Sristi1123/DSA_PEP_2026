@@ -18,3 +18,18 @@
 //         return s;
 //     }
 // };
+
+// class Solution {
+// public:
+//     int findPeakElement(vector<int>& nums) {
+//         int n=nums.size();
+//         int pivot=-1;
+//         if(nums.size()==1) return 0;
+//         for(int i=0;i<n-1;i++){
+//             if(nums[i]>nums[i+1]){
+//                 return i;
+//             }
+//         }
+//         return n-1;
+//     }
+// };
