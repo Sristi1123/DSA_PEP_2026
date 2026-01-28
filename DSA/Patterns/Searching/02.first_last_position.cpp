@@ -8,7 +8,7 @@
 //         int end=n-1;
 //         int res=-1;
 //         while(start<=end){
-//             // if mid is target-> store it in resvariable and go left (becz we will always find first occurence on left)
+//             // if mid is target-> store it in res variable and go left (becz we will always find first occurence on left)
 //             int mid=start+(end-start)/2;
 //             if(arr[mid]==target){
 //                 res=mid;
