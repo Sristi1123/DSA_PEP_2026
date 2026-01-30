@@ -1,6 +1,10 @@
 //  if there are n number of stairs, you can climb either 1 stair or 2 stairs at a time.
 //  Find the number of distinct ways to reach the nth stair.
 
+
+// --->it will be solved by dp it is just a thought process<---
+
+
 // #include <iostream>
 // using namespace std;
 // int countWays(int n) {
