@@ -1,13 +1,14 @@
 #include <iostream>
 using namespace std;
 bool findkey(int arr[],int size,int key){
-    // linear search
+    
+    // --> linear search
 
     // if(size==0) return false;
     // if(key==arr[0]) return true;
     // return findkey(arr+1,size-1,key);
 
-    // binary search
+    // --> binary search
 
     if(size<=0) return false;
     int mid=size/2;
