@@ -1,41 +1,28 @@
-#include<iostream>
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-    
-string reverse(string str){
-    int low=0;
-    int high=str.size()-1;
 
-    while(low<high){
-        swap(str[low++],str[high--]);
-    }
-    return str;
-}
+bool checkPalindrome(string str){
+    int low = 0;
+    int high = str.size() - 1;
 
-bool checkPalindrome(string str1){
-    // string ori=str1;
-    // string rev=reverse(str1);
-
-    // if(rev==ori){
-    //     return true;
-    // }
-
-    // return false;
-
-    int low=0;
-    int high=str1.size()-1;
-
-    while(low<high){
-        if(str1[low++]!=str1[high--]){
+    while(low < high){
+        if(str[low] != str[high]){
             return false;
         }
+        low++;
+        high--;
     }
     return true;
 }
 
 int main(){
     string str;
-    cin>>str;
-    cout<<checkPalindrome(str);
+    cin >> str;
+
+    if(checkPalindrome(str))
+        cout << "Palindrome";
+    else
+        cout << "Not Palindrome";
+
     return 0;
 }
