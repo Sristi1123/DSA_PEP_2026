@@ -11,7 +11,17 @@ class Node{
     }
 };
 void deleteFromFront(Node* &head){
-    head=head->next;
+    if(head==NULL){
+        return;
+    }
+    // if(head->next==nullptr){
+    //     delete head;                      // delete* -> ?
+    //     head=NULL;
+    //     return;
+    // }
+    Node* temp=head;
+    head=temp->next;
+    delete temp;
 }
 void print(Node* head){
     Node* temp=head;
@@ -40,6 +50,7 @@ int main(){
         n--;
         insertAtFront(head,val);
     }
+    deleteFromFront(head);
     print(head);
     return 0;
 }
