@@ -1,3 +1,5 @@
+// never use binary search in 2-D matrix
+
 #include <iostream>
 using namespace std;
 int main(){
