@@ -19,7 +19,7 @@ void insertAtFront(Node* &head, int val){
     node->next=head;
     head=node;
 }
-bool searchkey(Node* &head,int key){
+bool searchkey(Node* head,int key){
     if(head==NULL) return false;     //base case
 
     if(head->data==key){
