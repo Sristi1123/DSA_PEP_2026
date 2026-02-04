@@ -1,55 +1,38 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-    
 class Node{
     public:
     int data;
-    Node* prev;
     Node* next;
     Node(int val){
         data=val;
-        prev=NULL;
         next=NULL;
     }
 };
-void insertAtFront(Node* &head,int val){
-    Node* node=new Node(val);
+void deleteFromAnyPosition(Node* &head,int pos){
     if(head==NULL){
-        head=node;
         return;
     }
-    node->next=head;
-    head->prev=node;
-    head=node;
-}
-
-void insertAtAnyPosition(Node* &head, int val,int pos){
-    Node* node=new Node(val);
-    if(head=NULL){
-        head=node;
-        head->next=NULL;
-        head->prev=NULL;
-        return;
-    }
-    if(pos==1){
-        insertAtFront(head,val);
-        return;
-    }
-    int count=0;
     Node* temp=head;
+    if(pos==1){
+        temp=head;
+        delete temp;
+        head=NULL;
+        return;
+    }
+    Node* temp1=head;
+    int count=0;
+    if(temp==NULL || temp->next==NULL) return;
     while(temp!=NULL){
         count++;
         if(count==pos-1){
-            node->next=temp->next;
-            temp->next->prev=node;
-            temp->next=node;
-            node->prev=temp;
+            temp1=temp->next;
+            temp->next=temp->next->next;
+            delete temp1;
         }
-        temp=temp->next;
     }
 }
-
 void print(Node* head){
     Node* temp=head;
     while(temp!=NULL){
@@ -57,11 +40,20 @@ void print(Node* head){
         temp=temp->next;
     }
 }
+void insertAtFront(Node* &head, int val){
+    Node* node=new Node(val);
+    if(head==NULL){
+        head=node;
+        return;
+    }
+    node->next=head;
+    head=node;
+}
 int main(){
+    Node* head=NULL;
     int n;
     cout<<"Enter number of nodes: ";
     cin>>n;
-    Node* head=NULL;
     while(n>0){
         int val;
         cin>>val;
@@ -71,9 +63,7 @@ int main(){
     int pos;
     cout<<"enter the position: ";
     cin>>pos;
-    int val;
-    cin>>val;
-    insertAtAnyPosition(head,val,pos);
+    deleteFromAnyPosition(head,pos);
     print(head);
     return 0;
 }
