@@ -1,31 +1,27 @@
 // GFG problem: https://www.geeksforgeeks.org/problems/third-largest-element/1
-// Leetcode Problem: https://leetcode.com/problems/max-consecutive-ones/submissions/1894176714/
 
 // class Solution {
-// public:
-//     int findMaxConsecutiveOnes(vector<int>& nums) {
-        // int ones=0;
-        // int two=0;
-        // for(int i=0;i<nums.size();i++){
-        //     if(nums[i]==1){
-        //         ones++;
-        //     }else{
-        //         ones=0;
-        //     }
-        //     two=max(ones,two);
-        // }return two;
-
-
-//         int a=0;
-//         int b=0;
-//         for(int i=0;i<nums.size();i++){
-//             if(nums[i]==1){
-//                 a++;
-//             }else{
-//                 a=0;
+//   public:
+//     int thirdLargest(vector<int> &arr) {
+//         // code here
+//         int n=arr.size();
+//         int first=-1;
+//         int second=-1;
+//         int third=-1;
+//         for(int i=0;i<n;i++){
+//             if(arr[i]>first){
+//                 third=second;
+//                 second=first;
+//                 first=arr[i];
 //             }
-//             b=max(a,b);
+//             else if(arr[i]>second){
+//                 third=second;
+//                 second=arr[i];
+//             }
+//             else if(arr[i]>third){
+//                 third=arr[i];
+//             }
 //         }
-//         return b;
+//         return third;
 //     }
 // };
