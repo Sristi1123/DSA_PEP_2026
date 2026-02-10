@@ -4,7 +4,6 @@
 // public:
 //     bool isValid(string s) {
 //         stack<char> st;
-//         bool visited= false;
 //         for(char ch:s){
 //             if(ch=='('||ch=='{'||ch=='['){
 //                 st.push(ch);
@@ -21,12 +20,6 @@
 //                     return false;
 //                 }
 //             }
-//             // else if(ch==')'||ch=='}'||ch==']'){
-//             //     if(st.top()==ch){
-//             //         visited=true;
-//             //         st.pop();
-//             //     }
-//             // }
 //         }
 //         return st.empty();
 //     }
