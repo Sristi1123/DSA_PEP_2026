@@ -16,18 +16,22 @@ void reverseString(string str){
     int n=str.length();
     for(int i=0;i<n;i++){
         if(str[i]==' '){
-            if(!word.empty()){
-                st.push(reverseValue(word));
-            word="";
-            }
+           if(!word.empty()){                
+            st.push(reverseValue(word));   
+            word = ""; 
+           } 
         }else{
             word+=str[i];
         }
     }
+    if(!word.empty()) {
+            st.push(reverseValue(word));
+        }
     
     while(!st.empty()){
         cout<<st.top();
         st.pop();
+        cout<<" ";
     }
     cout<<endl;
 }
