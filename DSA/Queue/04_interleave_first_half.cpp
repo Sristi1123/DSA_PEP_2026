@@ -1,5 +1,50 @@
 // https://www.geeksforgeeks.org/problems/interleave-the-first-half-of-the-queue-with-second-half/1
 
+// optimized approach -->
+
+// class Solution {
+//   public:
+//     // 11 12 13 14 15 16 17 18 19 20
+//     void rearrangeQueue(queue<int> &q) {
+//         stack<int> st;
+//         int n=q.size()/2;
+        
+//         // push first half elements into the stack
+//         // queue: 16 17 18 19 20 || stack: 15 14 13 12 11
+//         for(int i=0;i<n;i++){
+//             st.push(q.front());
+//             q.pop();
+//         }
+//         // enqueue back the stack elements
+//         //  queue: 16 17 18 19 20 15 14 13 12 11
+//         while(!st.empty()){
+//             q.push(st.top());
+//             st.pop();
+//         }
+        
+//         // dequeue the first half elements of queue and enqueue them back
+//         // queue: 15 14 13 12 11 16 17 18 19 20 
+//         for(int i=0;i<n;i++){
+//             q.push(q.front());
+//             q.pop();
+//         }
+//         // again push the first half elemenst in the stack
+//         // queue: 16 17 18 19 20 || stack: 11 12 13 14 15
+//         for(int i=0;i<n;i++){
+//             st.push(q.front());
+//             q.pop();
+//         }
+//         while(!st.empty()){
+//             q.push(st.top());
+//             st.pop();
+//             q.push(q.front());
+//             q.pop();
+//         }
+//     }
+// };
+
+// Approach 2+3 -->
+
 // class Solution {
 //   public:
 //     void reverse(queue<int> &q){
