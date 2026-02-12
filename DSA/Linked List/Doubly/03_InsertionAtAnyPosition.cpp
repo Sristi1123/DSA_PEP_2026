@@ -26,7 +26,7 @@ void insertAtFront(Node* &head,int val){
 
 void insertAtAnyPosition(Node* &head, int val,int pos){
     Node* node=new Node(val);
-    if(head=NULL){
+    if(head==NULL){
         head=node;
         head->next=NULL;
         head->prev=NULL;
