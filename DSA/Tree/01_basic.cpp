@@ -46,7 +46,10 @@ class Node{
     }
 };
 int main(){
-    Node* node=new Node(5);
-    cout<<node->data;
+    Node* root=new Node(5);
+    root->left=new Node(2);
+    root->right=new Node(3);
+    root->left->right=new Node(7);
+    cout<<root->data;
     return 0;
 }
