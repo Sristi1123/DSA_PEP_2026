@@ -1,21 +1,21 @@
-// https://leetcode.com/problems/binary-tree-right-side-view/
+// https://www.geeksforgeeks.org/problems/left-view-of-binary-tree/1
 
 // class Solution {
-// public:
-//     vector<int> rightSideView(TreeNode* root) {
+//   public:
+//     vector<int> leftView(Node *root) {
+//         // code here
 //         vector<int> ans;
 //         if(root==NULL) return ans;
-//         queue<TreeNode*> q;
+//         queue<Node*> q;
 //         q.push(root);
 //         while(!q.empty()){
 //             int levelsize=q.size();
 //             int lastVal=0;
 //             for(int i=0;i<levelsize;i++){
-//                 TreeNode* topVal=q.front();
+//                 Node* topVal=q.front();
 //                 q.pop();
-//                 // lastVal=topVal->val;
-//                 if(i==levelsize-1){
-//                     ans.push_back(topVal->val);
+//                 if(i==0){
+//                     ans.push_back(topVal->data);
 //                 }
 //                 if(topVal->left){
 //                     q.push(topVal->left);
@@ -24,7 +24,6 @@
 //                     q.push(topVal->right);
 //                 }
 //             }
-//             // ans.push_back(lastVal);
 //         }
 //         return ans;
 //     }
