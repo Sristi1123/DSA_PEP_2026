@@ -33,6 +33,9 @@ using namespace std;
         2) Complete Binary Tree-> all levels are filled except the last level, the last level should be filled from left to right
         3) Skewed Binary Tree-> tilted to any one side of the tree
 
+    (*) if in question there asked for number of nodes then return 0
+    (*) if in question there asked for number of edges then return -1
+
 */
 class Node{
     public:
