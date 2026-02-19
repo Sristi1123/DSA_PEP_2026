@@ -6,7 +6,6 @@
         
 //         Node* node = new Node(x);
         
-//         // empty list
 //         if(head == NULL){
 //             return node;
 //         }
@@ -26,7 +25,6 @@
 //             count++;
 //         }
         
-//         // insert at end (when p is last index)
 //         if(count == p){
 //             temp->next = node;
 //             node->prev = temp;
