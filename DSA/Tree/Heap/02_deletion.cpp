@@ -28,8 +28,37 @@ class MaxHeap{
             }
         }
     }
-}
+    void bubbleup(int idx){
+        while(idx>0){
+            //  find the parent
+            int parent=(idx-1)/2;
+            // if curr node> parent{
+            if(heap[idx]>heap[parent]){
+                swap(heap[idx],heap[parent]);
+                idx=parent;
+            }else{
+                break;
+            }
+        }
+    }
+    void deletion(){
+        swap(heap[0],heap[heap.size()-1]);
+        heap.pop_back();
+        bubbleDown();
+    }
+     void insert(int val){
+        heap.push_back(val);
+        bubbleup(heap.size()-1);
+    }
+};
 int main(){
-    
+    MaxHeap heap;
+    heap.insert(2);
+    heap.insert(3);
+    heap.insert(4);
+    heap.insert(5);
+    for(int i=0;i<heap.heap.size();i++){
+        cout<<heap.heap[i]<<" ";
+    }
     return 0;
 }
