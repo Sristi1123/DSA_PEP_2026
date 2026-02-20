@@ -2,6 +2,8 @@
      -priority queue is a speacial type of queue where elements are accessed on basis of priority, not the insertion order
      -by default it has highest element priority
      -internally it is implemented using heap (CBT) and max heap by default (lergest element will be always on top)
+     - khi p agr kth largest // largest nikalna ho toh smj lena direct min heap use krenge
+     - or khi p smallest ka jikr kiya toh toh max heap use krenge 
 */
 
 #include<iostream>
