@@ -1,3 +1,5 @@
+// https://www.geeksforgeeks.org/problems/implement-stack-using-linked-list/1
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;

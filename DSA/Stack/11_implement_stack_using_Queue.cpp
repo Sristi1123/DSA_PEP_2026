@@ -10,7 +10,7 @@
 //     void push(int x) {
 //         // enqueue in q2
 //         q2.push(x);
-//         // take all elements from q1, pop them and and push in q2
+//         // take all elements from q1, pop them and push in q2
 //         while(!q1.empty()){
 //             q2.push(q1.front());
 //             q1.pop();
