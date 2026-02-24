@@ -10,21 +10,21 @@ int main(){
     cout<<"edges: ";
     cin>>m;
 
-    unordered_map<int,list<int>> adjList;
+    unordered_map<int,list<pair<int,int>>> adjList;
     cout<<"Enter edges(u,v): ";
     for(int i=0;i<m;i++){
-        int u,v;
-        cin>>u>>v;
+        int u,v,w;
+        cin>>u>>v>>w;   
 
-        adjList[u].push_back(v);
-        adjList[v].push_back(u);
+        adjList[u].push_back({v,w});
+        adjList[v].push_back({u,w});
         
     }
     cout<<"adjacency list: "<<endl;
     for(auto it:adjList){
         cout<<it.first<<"->";
         for(auto j:it.second){
-            cout<<j<<" ";
+            cout<<'('<<j.first<<","<<j.second<<')';
         }
         cout<<endl;
     }
