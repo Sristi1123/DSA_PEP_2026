@@ -2,6 +2,7 @@
 
 // class Solution {
 // public:
+// --> here we used dfs method
 //     void helper(int city,vector<vector<int>>& isConnected,vector<bool> &visited){
 //         // mark the curr city as visited
 //         visited[city]=true;

@@ -2,6 +2,7 @@
 
 // class Solution {
 // public:
+//  --> here we used dfs method
 //     void dfs(vector<vector<int>>& image,int row, int col, int original,int color){
 //         int n=image.size();
 //         int m=image[0].size();
