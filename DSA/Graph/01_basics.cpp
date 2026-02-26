@@ -18,5 +18,9 @@
               Directed=> indegree (sink/incoming edges) && outdegree (source/outgoing edges)
 
     * graph can have cycles as well as can be disconnected but tree can't
-    * A tree can be a graph but not vice-versa
+    * A tree can be a graph but not vice-versaonly
+    
+    * 
+    * Topological Sort only used in DAG Graphs
+    * If a Topological Sort is valid then it means there is no cycle
 */
