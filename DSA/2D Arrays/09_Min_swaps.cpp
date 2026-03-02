@@ -2,6 +2,14 @@
 
 // class Solution {
 // public:
+        /*
+            Intution:- find endzeroes number of continuous 0 at he end
+                    for each row check for required zeroes
+                    check the nearest row having 0's>=required
+                    if not found return -1
+                    else swap
+        */
+       
 //     int minSwaps(vector<vector<int>>& grid) {
 //         int n=grid.size();
 //         vector<int> zeroes(n,0);
