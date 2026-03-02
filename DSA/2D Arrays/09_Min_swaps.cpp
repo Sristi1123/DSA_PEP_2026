@@ -3,39 +3,41 @@
 // class Solution {
 // public:
         /*
-            Intution:- find endzeroes number of continuous 0 at he end
+            Intution:- find endzeroes number of continuous 0 at the end
                     for each row check for required zeroes
                     check the nearest row having 0's>=required
                     if not found return -1
                     else swap
         */
-       
+
 //     int minSwaps(vector<vector<int>>& grid) {
 //         int n=grid.size();
-//         vector<int> zeroes(n,0);
-//         for(int i=0;i<n;i++){
-//             int count=0;
-//             for(int j=n-1;j>=0;j--){
-//                 if(grid[i][j]==0) count++;
-//                 else break;
-//             }
-//             zeroes[i]=count;
-//         }
-//         int swaps=0;
-//         for(int i=0;i<n;i++){
-//             int req=n-i-1;
-//             if(zeroes[i]>=req) continue;
-//             int j=i+1;
-//             while(j<n && zeroes[j]<req){
-//                 j++;
-//             }
-//             if(j==n) return -1;
-//             while(j>i){
-//                 swap(zeroes[j],zeroes[j-1]);
-//                 swaps++;
-//                 j--;
-//             }
-//         }
-//         return swaps;
+        // vector<int> zeroes(n,0);
+        // for(int i=0;i<n;i++){
+        //     int j=n-1;
+        //     int count=0;
+        //     while(j>=0 && grid[i][j]==0){
+        //         count++;
+        //         j--;
+        //     }
+        //     zeroes[i]=count;
+        // }
+        // int steps=0;
+
+        // for(int i=0;i<n;i++){
+        //     int req=n-i-1;
+        //     // >=req
+        //     int j=i;
+        //     while(j<n && zeroes[j]<req){
+        //         j++;
+        //     }
+        //     if(j==n) return -1;
+        //     steps+=j-i;
+        //     while(j>i){
+        //         swap(zeroes[j],zeroes[j-1]);
+        //         j--;
+        //     }
+        // }
+        // return steps;
 //     }
 // };
