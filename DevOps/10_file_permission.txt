@@ -1,0 +1,84 @@
+- rw- rw- r--
+- file type
+r read
+w write
+x execute
+
+rw-         rw-         r-- 
+owner       group       others
+
+how to change the file permissions (chmod)
+symbolic method and nummeric method
+
+Symbolic method ->
+u -> user(owner)
+g -> group
+o -> others
+a -> all
+
+operators ->
++ -> add permissions
+- -> subtract permissions
+= -> assign permissions
+
+mkdir script.sh
+chmod g-x script.sh
+chmod g+x script.sh
+
+Nummeric method ->
+read -> 4
+write -> 2
+exceute -> 1
+
+rwx -> 7
+rw- -> 6
+r-x -> 5
+r-- -> 4
+-wx -> 3
+-w- -> 2
+--x -> 1
+--- -> 0
+
+chmod 755 -> user(rwx) group(r-x) others(r-x)
+
+chmod -R for recursive permission change
+
+
+users and groups -->
+user -> single person using device
+group -> collection of users
+
+cat /etc/passwd
+
+sudo groupadd devops
+
+cat /etc/group | grep frontend
+
+sudo useradd -m user3
+
+sudo usermod -aG frontend user1 -> add user1 to frontend group
+
+groups user2 -> check group with user
+
+vagrant@vagrant:~/linux_practice$ cd ..
+vagrant@vagrant:~$ sudo usermod -aG frontend user1
+vagrant@vagrant:~$ sudo usermod -aG backend user2
+vagrant@vagrant:~$ sudo usermod -aG devops user3
+vagrant@vagrant:~$ groups user1
+user1 : user1 frontend
+vagrant@vagrant:~$ groups user2
+user2 : user2 backend
+vagrant@vagrant:~$ sudo mkdir /fsd-project
+vagrant@vagrant:~$ sudo mkdir /fsd-project/frontend
+vagrant@vagrant:~$ sudo mkdir /fsd-project/backend
+vagrant@vagrant:~$ sudo mkdir /fsd-project/devops
+vagrant@vagrant:~$ sudo chown :frontend /fsd-project/frontend
+vagrant@vagrant:~$ sudo chown :devops /fsd-project/devops
+vagrant@vagrant:~$ sudo chown :backend /fsd-project/backend
+
+sudo chmod 770 /fsd-project/devops
+sudo chmod 770 /fsd-project/backend
+sudo chmod 770 /fsd-project/frontend
+
+sudo passwd user1
+su - user1

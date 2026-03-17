@@ -1,0 +1,57 @@
+MTR -> 
+
+less student.txt -> used for viewing large files
+more student.txt -> show one page at time
+
+head student.txt
+head -n 3 student.txt -> first lines
+
+tail -n 4 student.txt -> last lines
+
+grep cloud student.txt -> case sensitive , search pattern
+
+grep -i devops -> non - case sensitive
+
+grep -n cloud student.t
+xt -> also get line number
+
+grep -E "cloud|security" student.txt -> multiple selections
+
+cut -d " " -f2 student.txt -> extract second field (f3 for 3 field and so on...)
+
+Stream Editor
+sed 's/security/cyber/' student.txt -> replace security with cyber
+
+sed 's/security/cyber/g' student.txt
+here g means replace all occurrences of the word in each line, not just the first one.
+
+sed '3d' student.txt -> delete the 3 line
+
+sed -n '2,5p' student.t
+xt -> displays line number 2 to line number 5
+
+sort student.txt
+
+sort -k2 student.txt -> sort according to the name (k2)
+
+
+cd linux_practice
+ls
+cd folder2
+ls
+cat file1.txt
+grep hi file1.txt
+ls
+cat original.txt
+grep hi *
+
+~/linux_practice$ grep -R am * -> recursive search
+
+~/linux_practice$ grep -iR am * -> ignore casing
+
+PIPING CONCEPT ->
+vagrant@vagrant:~/linux_practice/folder2$ cat file1.txt | grep am
+hello, i am in file1.txt
+
+cat student.txt | cut -d " " -f3 | sor
+t
