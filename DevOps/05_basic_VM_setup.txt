@@ -1,0 +1,29 @@
+Virtualization -> Virtualization is a technology that allows multiple virtual computers (virtual machines) to run on a single physical computer.
+
+In simple words, virtualization creates a virtual version of hardware resources such as a computer, operating system, storage, or network. This makes it possible to run different operating systems or applications on the same machine without needing separate physical hardware.
+
+For example, using tools like VirtualBox or VMware, you can run Linux inside a Windows computer as a virtual machine. Each virtual machine behaves like an independent computer with its own operating system, memory, and storage, even though they all share the same physical system.
+
+Virtualization helps in better resource utilization, cost reduction, easier testing, and improved system management.
+
+-> Full Virtualization is a type of virtualization where a complete virtual version of a physical computer is created, allowing an operating system to run exactly as it would on real hardware.
+
+-> Paravirtualization is a type of virtualization where the guest operating system is modified to work with the hypervisor.
+
+-> OS-level Virtualization is a type of virtualization where multiple isolated environments (containers) run on the same operating system kernel.
+
+Hypervisor -> Hypervisor is software that creates and manages virtual machines (VMs) on a physical computer.
+
+In simple terms, a hypervisor acts as a middle layer between the hardware and the virtual machines. It allows multiple operating systems to run on the same physical system while sharing the hardware resources like CPU, memory, and storage.
+
+The hypervisor controls how these resources are allocated and used by each virtual machine, ensuring that each VM works independently without affecting others.
+
+Examples of Hypervisors:
+Oracle VirtualBox
+VMware
+Microsoft Hyper-V
+
+Types of Hypervisors:
+1. Type 1 (Bare-metal Hypervisor) – Runs directly on the hardware (e.g., VMware ESXi, Hyper-V).
+
+2. Type 2 (Hosted Hypervisor) – Runs on top of an existing operating system (e.g., VirtualBox, VMware Workstation).

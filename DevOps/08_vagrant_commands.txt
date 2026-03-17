@@ -1,0 +1,87 @@
+vagrant up
+vagrant ssh
+whoami
+sudo -i
+cd /
+ls
+cd sbin or cd usr or cd bin
+ls
+
+mkdir linux_practice
+
+cd linux_practice/
+
+mkdir folder1
+
+cd ..
+
+mkdir folder2
+
+mkdir folder3
+
+ls -l
+Output -> detailed list
+
+total 12
+drwxrwxr-x 2 vagrant vagrant 4096 Mar 15 15:38 folder1
+drwxrwxr-x 2 vagrant vagrant 4096 Mar 15 15:39 folder2
+drwxrwxr-x 2 vagrant vagrant 4096 Mar 15 15:39 folder3
+
+
+NOTES --->
+list files and directories (ls)
+ls -> shows all files in the current directory
+ls -l -> shows detailed information
+ls -a -> shows hidden files
+ls -lh -> shows readable form
+
+mkdir project{1..3} -> create three folders in one go 
+
+cd ~ -> redirects to the root directory
+
+creating files
+touch file1.txt
+
+vim file1.txt
+press i to insert
+then esc
+:wq -> save and quit
+
+cat file1.txt -> display the file content
+
+copy 
+cp file1.txt copy_file1.txt
+
+cp file1.txt ~/linux_practice/folder2/
+
+cp -r project1 backup/ (r means recursive copy)
+
+rename -> mv file1.txt newfile1.txt
+
+move -> mv newfile1.txt ~/linux_practice/backup
+
+remove file -> rm fileName
+
+rm file2.txt filde3.txt -> multiple files deletion
+
+remove directory -> rmdir directoryName
+
+if things are inside the directory then you have to do recursive delete 
+rm -r folder1
+rm -rf backup (once its gone its gone -> force delete) 
+
+whoami
+date
+uptime
+history
+run command !(number) -> !111
+ctrl+l to clear
+
+file type
+Symbol            File type
+-                 regular file
+d                 directory
+l                 symbolic link
+b                 block device
+p                 named pipe
+s                 socket

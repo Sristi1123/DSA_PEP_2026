@@ -1,0 +1,43 @@
+SDLC Models
+
+1. Waterfall Model
+
+- A linear and sequential software development model.
+- Each phase must be completed before the next phase begins.
+- Once a phase is finished, it is difficult to go back and make changes.
+- Requirements are clearly defined at the beginning of the project.
+- Suitable for small projects or projects with fixed requirements.
+- Testing is usually done after the development phase is completed.
+- The development process flows step by step like a waterfall.
+
+Phases in Waterfall Model
+1. Requirement Analysis  
+2. System Design  
+3. Implementation (Development)  
+4. Testing  
+5. Deployment  
+6. Maintenance  
+
+
+2. Agile Model
+
+- An iterative and incremental software development model.
+- Development is divided into small cycles called sprints.
+- Allows changes in requirements even during development.
+- Focuses on continuous feedback from customers or stakeholders.
+- Development and testing happen simultaneously in each iteration.
+- Encourages team collaboration and frequent communication.
+- Suitable for large, complex, and frequently changing projects.
+
+Key Concepts in Agile
+- Sprint Planning  
+- Daily Stand-up Meetings  
+- Continuous Integration and Testing  
+- Frequent Product Releases  
+- Customer Feedback and Improvements
+
+Waterfall Model -> each phase must be completed before next phase
+
+Agile Model -> divide the phase, easy to qnd fro, time saving
+
+Development + Operations = stability and automation

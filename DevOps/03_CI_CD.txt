@@ -1,0 +1,55 @@
+Continuous Integration (CI)
+
+- If a project is not updated regularly on GitHub, it can lead to several issues such as:
+  - Merge Conflicts
+  - Build Failures
+  - Missing Dependencies
+
+- These problems occur when developers work separately for a long time and later try to merge their changes into the main repository.
+
+- To solve this problem, teams use Continuous Integration (CI).
+
+- Continuous Integration is a practice where developers frequently push their code changes to a central repository.
+
+- Whenever a new change is pushed:
+  - The project is automatically built
+  - Automated tests are executed
+  - Automated validation is also done
+
+- This process is performed using CI tools and automated pipelines.
+
+- Benefits of Continuous Integration:
+  - Early Detection of Errors
+  - Reduced Merge Conflicts
+  - Stable and Updated Codebase
+  - Improved Collaboration Among Developers
+
+Work Flow ->
+1. Writing the code: VS Code
+2. Code commit: GitHub
+3. CI Server: detect changes: A CI tool: Jenkins/ github actions/ gitlab CI (these all automatically detects new commits)
+4. Build process starts: compilation will happen first, then you see there are Dependencies, libraries, hidden files ie all the files that are required to run the project
+5. Run automated tests (unit testing)
+6. .exe, .jar, .war, .txt (artifacts): deployement things
+7. Store Artifacts: AWS (cloud service)
+8. Deployement: testing environment, then they stage to the production
+MTR :- this production is not the part of CI, its part of CD
+
+TOOLS :-
+Version control system: github, git
+Build tools: maven, gradle, npm(compile and package the code)
+CI server: jenkins, github actions, gitlab CI (automate the pipelines)
+
+
+Continuous Development (CD)
+CI :- code is always in working state
+CD :- code is always ready to be deployed
+
+(Goal of CD is to keep the software or code in the deployment state all the time)
+
+TOOLS :-
+- Configuration management/ system automation
+Ansible/Puppet (automate server setup, package installations, configuration management)
+
+- Infra automation
+Terraform

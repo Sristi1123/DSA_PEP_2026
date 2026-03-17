@@ -1,0 +1,41 @@
+Tools for windows ->
+
+install chocolatey from the instructions given in the link below
+https://chocolatey.org/install
+
+Run Get-ExecutionPolicy.
+If it returns Restricted, then run 
+Set-ExecutionPolicy AllSigned 
+or 
+Set-ExecutionPolicy Bypass -Scope Process.
+
+Now run the following command:
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+choco install virtualbox --version=7.1.4 -y
+
+choco install vagrant --version=2.4.3 -y
+
+choco install git -y
+
+choco install corretto17jdk -y
+
+choco install maven -y
+
+choco install awscli -y
+
+choco install intellijidea-community -y
+
+choco install vscode -y
+
+choco list
+
+signup github
+
+optional 
+https://www.godaddy.com/en-in
+
+https://hub.docker.com
+
+https://www.sonarsource.com/products/sonarqube/cloud/

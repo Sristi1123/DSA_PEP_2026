@@ -1,0 +1,23 @@
+Steps ->
+1. install virtual box
+2. create a virtual machine
+3. install linux (ubuntu) inside VM
+4. devops tools -> (docker, terraform...)
+
+HOW TO INSTALL VIRTUAL BOX --->
+https://www.virtualbox.org
+download
+select Windows hosts
+
+VirtualBox Extension Pack
+
+& "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" --version
+
+vagrant status
+==> vagrant: A new version of Vagrant is available: 2.4.9 (installed version: 2.4.3)!
+==> vagrant: To upgrade visit: https://www.vagrantup.com/downloads.html
+
+A Vagrant environment or target machine is required to run this
+command. Run `vagrant init` to create a new Vagrant environment. Or,
+get an ID of a target machine from `vagrant global-status` to run
+this command on. A final option
