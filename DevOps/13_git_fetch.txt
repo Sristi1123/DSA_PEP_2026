@@ -1,0 +1,19 @@
+git remote -v
+
+git checkout main
+
+git branch
+
+git branch -b branchName
+ 
+git checkout branchName
+
+git merge branchMerge
+
+git diff
+
+git diff testing.txt
+
+git diff --cached
+
+git restore --staged testing.txt

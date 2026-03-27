@@ -18,7 +18,7 @@ git log --oneline --graph --all
 
 vagrant@vagrant:~/eccomerce-app$ git log
 commit 6b71bbbd95b824289d4e2e433eee2d1720702c2a (HEAD -> master)
-Author: KomalJoshi17 <moudgillkomal6@gmail.com>
+Author: Sristi1123 <sristi1501@gmail.com>
 Date:   Tue Mar 17 18:25:31 2026 +0000
 
     first commit
@@ -35,22 +35,22 @@ vagrant@vagrant:~/eccomerce-app$ git log -1 --oneline
 vagrant@vagrant:~/eccomerce-app$ git log -5 --oneline
 7ae58b2 (HEAD -> master) completed index.html -> shows last five commits
 
-vagrant@vagrant:~/eccomerce-app$ git log --author="KomalJoshi17"
+vagrant@vagrant:~/eccomerce-app$ git log --author="Sristi1123"
 commit 7ae58b27bfeb65bdfcf00874496327626e4bfab3 (HEAD -> master)
-Author: KomalJoshi17 <moudgillkomal6@gmail.com>
+Author: Sristi1123 <sristi1501@gmail.com>
 Date:   Wed Mar 18 11:06:07 2026 +0000
 
     completed index.html
 
 commit 6b71bbbd95b824289d4e2e433eee2d1720702c2a
-Author: KomalJoshi17 <moudgillkomal6@gmail.com>
+Author: Sristi1123 <sristi1501@gmail.com>
 Date:   Tue Mar 17 18:25:31 2026 +0000
 
     first commit
 
 vagrant@vagrant:~/eccomerce-app$ git log --grep="first"
 commit 6b71bbbd95b824289d4e2e433eee2d1720702c2a
-Author: KomalJoshi17 <moudgillkomal6@gmail.com>
+Author: Sristi1123 <sristi1501@gmail.com>
 Date:   Tue Mar 17 18:25:31 2026 +0000
 
     first commit -> pattern searching
