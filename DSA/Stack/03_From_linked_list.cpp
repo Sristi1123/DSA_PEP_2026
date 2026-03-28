@@ -53,3 +53,59 @@ int main(){
     
     return 0;
 }
+
+/* class Node {
+  public:
+    int data;
+    Node* next;
+
+    Node(int x) {
+        data = x;
+        next = nullptr;
+    }
+}; */
+
+// class myStack {
+//     int n;
+//     int* arr;
+//     int top;
+//     public:
+//         myStack(int n=1000) {
+//         this->n=n;
+//         arr=new int[n];
+//         top=-1;
+//     }
+
+//     void push(int x) {
+//         if(top==n-1){
+//             return;
+//         }
+//         top++;
+//         arr[top]=x;
+//     }
+
+//     void pop() {
+//         if(top==-1){
+//             return;
+//         }
+//         top--;
+//     }
+//     bool isEmpty() {
+//         if(top==-1){
+//             return true;
+//         }
+//         return false;
+//     }
+
+
+//     int peek() {
+//         if(top==-1){
+//             return -1;
+//         }
+//         return arr[top];
+//     }
+
+//     int size() {
+//         return top+1;
+//     }
+// };
