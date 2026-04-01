@@ -1,32 +1,32 @@
-docker -v -> check docker version
+✅docker -v -> check docker version
         What it does: Prints the installed Docker version (e.g. Docker version 25.0.3).
 
         Why you used it: To confirm Docker is installed and working before doing anything else.
 
         When to use: First thing after installing Docker, or when troubleshooting — e.g. to see if a feature requires a newer version.
 
-docker images -> list local images
+✅docker images -> list local images
         What it does: Shows all Docker images stored on your machine — name, tag, image ID, and size.
 
         Why you used it: To see which MySQL images (latest and 8.0) were already downloaded, and to check the state of your images after deleting one.
 
         When to use: Before running a container (to check if image is already there), after pulling an image, or after removing one to confirm it's gone.
 
-docker ps -> list running containers
+✅docker ps -> list running containers
         What it does: Shows only currently running containers — their ID, image, name, ports, and uptime.
 
         Why you used it: To confirm whether mysql-latest and mysql-older were actually running after start/stop commands.
 
         When to use: Any time you want to see what's actively running — the most-used Docker command in day-to-day work.
 
-docker ps -a -> list all containers (including stopped)
+✅docker ps -a -> list all containers (including stopped)
         What it does: Shows every container — running, stopped, or crashed — with their status.
 
         Why you used it: After stopping containers, you used this to confirm they were stopped but not yet removed. Stopped containers still take up disk space until deleted.
 
         When to use: When docker ps shows nothing but you know you had containers — they're stopped, not gone. Also useful for finding container IDs to remove.
 
-docker pull mysql -> pull the latest mysql image
+✅docker pull mysql -> pull the latest mysql image
         What it does: Downloads the mysql:latest image from Docker Hub (the official public registry) to your machine.
 
         Why you used it: To get the newest MySQL version available.
@@ -35,16 +35,16 @@ docker pull mysql -> pull the latest mysql image
 
 ☆☆ If you don't pull first, docker run will auto-pull anyway — so this step is optional but useful to pre-cache large images.
 
-docker pull mysql:8.0 -> pull a specific version (tag)
+✅docker pull mysql:8.0 -> pull a specific version (tag)
 
-docker run -d -e MYSQL_ROOT_PASSWORD=secret mysql -> run a container in background
+✅docker run -d -e MYSQL_ROOT_PASSWORD=secret mysql -> run a container in background
         -d — Detached mode. Runs the container in the background so your terminal stays free. Without this, Docker locks your terminal to the container's output.
 
         -e MYSQL_ROOT_PASSWORD=secret — Environment variable. MySQL requires a root password on startup. You pass it via -e. Without this, the container refuses to start.
 
         Why you used it: To spin up MySQL without needing a config file — just pass the password as an env var and Docker handles the rest.
 
-docker run --name mysql-latest -d -e MYSQL_ROOT_PASSWORD=secret -p8080:3306 mysql -> run with aq name and port mapping
+✅docker run --name mysql-latest -d -e MYSQL_ROOT_PASSWORD=secret -p8080:3306 mysql -> run with aq name and port mapping
         --name mysql-latest — Give it a readable name. Instead of referring to the container by a random ID like e61ffee6cb85, you can use mysql-latest in all future commands.
 
         -p 8080:3306 — Port mapping: host:container. MySQL inside the container listens on port 3306. This maps your computer's port 8080 to it, so you can connect via localhost:8080.
