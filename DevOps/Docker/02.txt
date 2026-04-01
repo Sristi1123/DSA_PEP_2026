@@ -32,4 +32,21 @@ docker pull mysql -> pull the latest mysql image
         Why you used it: To get the newest MySQL version available.
 
         When to use: Before running a container for the first time, or to update an existing image to the newest version.
-        
+
+☆☆ If you don't pull first, docker run will auto-pull anyway — so this step is optional but useful to pre-cache large images.
+
+docker pull mysql:8.0 -> pull a specific version (tag)
+
+docker run -d -e MYSQL_ROOT_PASSWORD=secret mysql -> run a container in background
+        -d — Detached mode. Runs the container in the background so your terminal stays free. Without this, Docker locks your terminal to the container's output.
+
+        -e MYSQL_ROOT_PASSWORD=secret — Environment variable. MySQL requires a root password on startup. You pass it via -e. Without this, the container refuses to start.
+
+        Why you used it: To spin up MySQL without needing a config file — just pass the password as an env var and Docker handles the rest.
+
+docker run --name mysql-latest -d -e MYSQL_ROOT_PASSWORD=secret -p8080:3306 mysql -> run with aq name and port mapping
+        --name mysql-latest — Give it a readable name. Instead of referring to the container by a random ID like e61ffee6cb85, you can use mysql-latest in all future commands.
+
+        -p 8080:3306 — Port mapping: host:container. MySQL inside the container listens on port 3306. This maps your computer's port 8080 to it, so you can connect via localhost:8080.
+
+        Why the port conflict error happened: When you tried to run both containers on the same host port (8080), Docker refused — two processes can't share one port.

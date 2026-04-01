@@ -1,0 +1,35 @@
+docker stop CONT_NAME/cont_id ->gracefully stop a running container
+        What it does: Sends a SIGTERM signal to the container, giving it 10 seconds to shut down cleanly before forcing it to stop.
+
+        Why you used it: To free up ports and stop MySQL before re-running with different config. You used both the container ID (5a0769218352) and names (mysql-older).
+
+        When to use: Any time you want to pause a container without deleting it. Stopped containers keep their data and can be restarted.
+
+💡Use docker kill to force-stop immediately (like pulling the plug). Prefer stop for databases — it gives them time to flush writes.
+
+docker rm CONT_NAME -> detele a stopped container 
+        What it does: Permanently removes a container — frees disk space and clears it from docker ps -a.
+
+        Why you used it: After stopping the old MySQL containers, you removed them so you could recreate them with different port mappings (you can't reuse a name that already exists).
+
+        When to use: After stopping a container you no longer need, or before recreating it with new settings.
+
+💡You can combine stop + remove: docker rm -f mysql-older force-removes even a running container.
+
+docker start cont_name -> restart a stopped container
+        What it does: Starts a container that was previously stopped — keeps all its original settings, data, and name.
+
+        Why you used it: mysql-latest had stopped, and you needed it running before you could exec into it with a shell.
+
+        When to use: When a container has stopped (by itself, after a reboot, or because you stopped it) and you want it running again without creating a new one.
+
+docker rmi image_id -> delete a local image
+        What it does: Removes an image from your local machine. You used the image ID 91832dcd7bc5.
+
+        Why you used it: To free up disk space or clean up an image you no longer needed.
+
+        When to use: After testing, when you want a fresh pull, or to reclaim disk space. Docker images can be several GB each.
+
+💡You can't remove an image if a container (even stopped) is still using it. Remove the container first with docker rm.
+
+PULL -> RUM -> STOP -> REMOVE
