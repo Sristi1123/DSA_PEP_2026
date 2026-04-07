@@ -32,4 +32,4 @@
 
 💡You can't remove an image if a container (even stopped) is still using it. Remove the container first with docker rm.
 
-PULL -> RUM -> STOP -> REMOVE
+PULL -> RUN -> STOP -> REMOVE

@@ -1,0 +1,93 @@
+7. What's running?
+To lists all the docker containers are running with container details.
+$ docker ps
+
+TASK 1 ->
+Run Ubuntu container
+Pass -e COLLEGE=CSE
+Show echo $COLLEGE
+Stop container  then check what happened
+
+8. ps -a
+To list all the docker containers running/exited/stopped with container details
+$ docker ps -a
+
+9. exec
+Access the docker container and run commands inside the container in bash 
+$ docker  exec  -it  09ca6feb6efc bash/env
+where, 09ca6feb6efc ---> it is Id of the container 
+
+10. Removing container
+-> Remove the docker container with container id mentioned in the command.
+$ docker  rm  9b6343d3b5a0 
+
+-> Run the below command to check if the container got removed or not.
+$ docker ps -a
+
+11. Removing image
+Remove the docker image with the docker image id mentioned in the command
+$ docker rmi fce289e99eb9
+
+..contd..
+To remove the image forcefully 
+$ docker rmi –f  <image id>
+
+docker rmi -f 92fa43a2ff60503fdf250
+
+Untagged: httpd:latest
+Untagged: httpd@sha256:7765977cf2063fec486b63ddea574faf8fbed285f2b17020fa7ef70a4926cdec
+Deleted: sha256:92fa43a2ff60503fdf250ef0a16d4170aa2a47c4b5a60d427724283543a8792a
+
+TASK 2 ->
+Run a Docker container named “DB-app" based on the “mongodb" image, and expose port 80 on the host to port 8082 on the container?
+
+docker pull mongo
+docker run -d --name DB-app -p 80:8082 mongo
+
+TASK 3 ->
+You are a DevOps engineer in a startup company. The development team asks you to quickly deploy a simple web page that displays the message:
+- Use the official httpd Docker image.
+- Run the container so it is accessible on port 8080 of the host machine.
+- Create or update an HTML file inside the container to display the required message.
+- Verify the output using a command-line tool.
+- Properly stop and remove the container after testing.
+
+docker pull httpd
+docker run -d --name my-apache -p 8080:80 httpd
+docker exec -it my-apache bash -c "echo '<h1>Hello from Docker Apache!</h1>' > /usr/local/apache2/htdocs/index.html"
+curl http://localhost:8080
+docker stop my-apache
+docker rm my-apache
+
+TASK 4 ->
+3. How would you use the docker run command with -it, -e, -v, and --name to:
+- Set an environment variable APP_ENV=production.	
+- Bind a local directory /app/data to /data inside the container.	
+- Name the container my_app.	
+
+docker pull ubuntu
+mkdir C:\app\data
+docker run -it --name my_app -e APP_ENV=production -v C:\app\data:/data ubuntu /bin/bash
+echo $APP_ENV
+echo "Hello this is my first program" > /data/test.txt
+cat /data/test.txt
+echo "Second line added" >> /data/test.txt
+cat /data/test.txt
+exit
+
+Docker container commands --->
+Container Lifecycle Management
+- Run a container (creates and starts it) 
+docker run -d -p 80:80 --name my_container nginx
+
+- Start a stopped container 
+docker start <container_id/name>
+
+- Stop a running container 
+docker stop <container_id/name>
+
+- Restart a container 
+docker restart <container_id/name>
+
+- Pause a container 
+docker pause <container_id/name>

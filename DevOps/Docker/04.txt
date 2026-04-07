@@ -1,0 +1,33 @@
+DOcker Commands --->
+
+1. Finding the version
+$ docker --version 
+-> Docker version 18.09.6, build 481bc77
+
+2. Docker info
+-> Get detailed information about docker installed on the system including the kernel version, number of containers and images, etc.
+$ docker info
+
+-> Containers: 3 
+Running: 1 
+Paused: 0 
+Stopped: 2 
+Images: 3 
+Server Version: 18.09.6 
+Storage Driver: overlay2
+Backing Filesystem: extfs 
+Supports d_type: true Native Overlay Diff: true Logging Driver
+
+3. Checking History
+-> Shows the history of a docker image with the image name mentioned in the command
+$ docker history httpd
+
+-> IMAGE         CREATED    CREATED BY    SIZE      COMMENT
+
+4. Downloading Image 
+-> When we need to pull the docker image from dockerhub (docker repository) then ,the following example of pulling the the image and here we are taking Apache HTTP server image
+$ docker pull httpd
+
+5. Images
+-> To list all the docker images pulled on the system with image details such as TAG/IMAGE ID/SIZE etc.
+$ docker images

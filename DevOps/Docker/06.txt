@@ -1,0 +1,38 @@
+-p optional flag in run command
+
+-> -p stands for publish port.
+It maps a port on your host machine to a port inside the container.
+
+In simple words:
+-> -p allows users outside the container to access an application running inside the container.
+
+By default: 
+-> Containers run in an isolated network
+-> Applications inside containers are NOT accessible from the host/browser
+-> So if a web server is running inside a container, you must expose it using -p
+
+Syntax of -p -->
+docker run -p <HOST_PORT>:<CONTAINER_PORT> IMAGE
+
+Port                     Description
+HOST_PORT                Port on your system (Laptop/Server)
+CONTAINER_PORT           Port where app runs inside contain
+
+Example 1 :
+Without –p 
+-> docker run nginx
+
+- Try opening browser. But it is not accessible
+- As no port mapping done here
+
+Now try to Run Nginx with -p
+-> docker run -p 8080:80 nginx
+
+What happens internally?
+Browser → localhost:8080 → Docker Host → Container:80 → Nginx
+
+docker run -d -p 3307:3306 --name mysql-test –e MYSQL_ROOT_PASSWORD=root123  mysql
+
+docker exec -it mysql-test bash
+
+mysql -h 127.0.0.1 -P 3306 -u root –p

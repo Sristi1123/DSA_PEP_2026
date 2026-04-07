@@ -1,0 +1,120 @@
+Docker run Command – Complete Notes
+
+What is docker run?
+Used to create and start a container from an image
+
+Syntax:
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Components:
+- OPTIONS → Flags to configure container
+- IMAGE → Docker image name
+- COMMAND → Command to execute
+- ARG → Arguments for the command
+
+Common Options: 
+Option	Meaning
+-it	    Interactive terminal mode
+-d	    Run container in background
+--name	Assign container name
+--rm	Auto delete container after exit
+-p	    Port mapping (host → container)
+-e	    Set environment variable
+-v	    Mount volume
+
+Example 1: Basic Run
+docker run httpd echo "Hello, World!"
+
+Explanation:
+- Runs container from httpd image
+- Executes command → echo "Hello, World!"
+
+Example 2: Run with Name
+docker run --name my-container httpd echo "Hello, World!"
+
+explanation:
+--name → assigns name (my-container)
+Same execution as above
+
+Example 3: Environment Variables
+docker run -e MY_VAR=value httpd env
+
+Explanation:
+-e → sets environment variable
+env → displays variables inside container
+
+Environment Variables: 
+What are they?
+Key-value pairs used to configure applications
+
+Uses:
+- Read configuration
+- Store secrets (username, password)
+- Control app behavior dynamically
+
+Why use environment variables?
+Without -e:
+- Hard-coded config inside image
+- Need to rebuild image for changes
+
+With -e:
+- Same image → different behavior
+- Flexible & secure
+- Used in microservices & cloud
+
+Example: Access variable inside container
+docker run -it -e MY_NAME=Harpreet ubuntu bash
+
+Then inside container:
+echo $MY_NAME
+
+Note:
+- Variable exists only inside container
+- Host system is not affected
+
+Multiple Environment Variables
+- docker run -e APP_ENV=production -e APP_VERSION=1.0 nginx
+
+MySQL Container Example
+docker run -d \
+  -e MYSQL_ROOT_PASSWORD=root123 \
+  -e MYSQL_DATABASE=college \
+  -e MYSQL_USER=admin \
+  -e MYSQL_PASSWORD=admin123 \
+  mysql:8
+
+Important:
+- These variables are mandatory
+- Without them → container will not start
+
+Using Host Variable
+- Step 1:
+export APP_PORT=8080
+
+- Step 2:
+docker run -e APP_PORT nginx env
+
+Using .env File
+- Create file:
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=secret
+
+- Run container:
+docker run --env-file .env myapp
+
+Example 4: Interactive + Background
+docker run -it -d httpd
+
+Explanation:
+-it → interactive terminal
+-d → background execution
+- Runs httpd container
+
+Key Points to Remember
+docker run = create + start container
+-d → background mode
+-it → interactive mode
+-e → environment variables
+.env → manage multiple variables easily
+Containers are isolated (host not affected)
