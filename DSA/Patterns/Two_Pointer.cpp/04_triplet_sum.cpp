@@ -1,4 +1,4 @@
-// // https://www.geeksforgeeks.org/problems/triplet-sum-in-array-1587115621/1 ->time complexity is O(n^2)
+// https://www.geeksforgeeks.org/problems/triplet-sum-in-array-1587115621/1 ->time complexity is O(n^2)
 
 // class Solution {
 //   public:
