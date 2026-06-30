@@ -1,0 +1,48 @@
+nexus:
+ image: sonatype/nexus3
+ container_name: cNexus
+ ports:
+ - "8081:8081"
+ volumes:
+ - nexus_data:/nexus-data
+ networks:
+ - jsN
+sonarqube:
+ image: sonarqube
+ container_name: cSonarqube
+ ports:
+ - "9000:9000"
+ environment:
+ - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+ volumes:
+ - sonarqube_data:/opt/sonarqube/data
+ - sonarqube_extensions:/opt/sonarqube/extensions
+ - sonarqube_logs:/opt/sonarqube/logs
+ networks:
+ - jsN
+ # restart: unless-stoppe
+ jenkins:
+ image: jenkins/jenkins:lts
+ container_name: cJenkins
+ ports:
+ - "8080:8080"
+ - "50000:50000"
+ volumes:
+ - jenkins_home:/var/jenkins_home
+ - /var/run/docker.sock:/var/run/docker.sock # For Docker-in-Docker if needed
+ - /usr/bin/docker:/usr/bin/docker
+ # environment:
+ # - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+ networks:
+ - jsN
+ # restart: unless-stopped
+ user: root # For Docker socket access
+networks:
+jsN:
+ name: jsN
+volumes:
+sonarqube_data:
+sonarqube_extensions:
+sonarqube_logs:
+jenkins_home:
+nexus_data:

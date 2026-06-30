@@ -1,0 +1,10 @@
+services:
+  ubuntu1:
+    image: ubuntu
+    container_name: multi-ubuntu-ubuntu1
+    tty: true
+
+  ubuntu2:
+    image: ubuntu
+    container_name: multi-ubuntu-ubuntu2
+    tty: true
